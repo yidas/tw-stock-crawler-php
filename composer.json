@@ -1,0 +1,21 @@
+{
+    "name": "yidas/tw-stock-parser",
+    "description": "Taiwan Stock Opendata Parser with realtime - 台灣股市股票資訊擷取器",
+    "keywords": ["php", "stock", "parser", "TW Stock"],
+    "homepage": "https://github.com/yidas/tw-stock-parser",
+    "type": "library",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/yidas/tw-stock-parser/issues",
+        "source": "https://github.com/yidas/tw-stock-parser"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "yidas\\": "src/"
+        }
+    }
+}
