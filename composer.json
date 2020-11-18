@@ -1,13 +1,13 @@
 {
-    "name": "yidas/tw-stock-parser",
-    "description": "Taiwan Stock Opendata Parser with realtime - 台灣股市股票資訊擷取器",
-    "keywords": ["php", "stock", "parser", "TW Stock"],
-    "homepage": "https://github.com/yidas/tw-stock-parser",
+    "name": "yidas/tw-stock-crawler",
+    "description": "Taiwan Stock Opendata Crawler with realtime - 台灣股市股票資訊擷取器",
+    "keywords": ["php", "stock", "crawler", "TW Stock"],
+    "homepage": "https://github.com/yidas/tw-stock-crawler",
     "type": "library",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/yidas/tw-stock-parser/issues",
-        "source": "https://github.com/yidas/tw-stock-parser"
+        "issues": "https://github.com/yidas/tw-stock-crawler/issues",
+        "source": "https://github.com/yidas/tw-stock-crawler"
     },
     "minimum-stability": "stable",
     "require": {
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "yidas\\": "src/"
+            "yidas\\twStockCrawler\\": "src/"
         }
     }
 }
