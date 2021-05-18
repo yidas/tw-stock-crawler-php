@@ -58,6 +58,10 @@ $priceData2454 = $parser::getLastPrice("2454");
 $companyData2330 = $parser::getCompanyData();
 ```
 
+> Alternative source:
+> - "Yahoo" (default): Acceptable access restrictions
+> - "TWSE": Strict access restrictions
+
 ### Company Data
 
 `Crawler::getCompanyData("2330");`:
