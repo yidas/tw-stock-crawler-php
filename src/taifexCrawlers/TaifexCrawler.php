@@ -49,8 +49,8 @@ class TaifexCrawler extends BaseCrawler
         $pattern = '/<font color="blue">\s*\n*\s*(\S+)<\/font>/';
         // preg_match_all($pattern, $html, $matches);var_dump($matches);exit;
         $matches = preg_match_all($pattern, $html, $match) ? $match[1] : '';
-        # Check for Data
-        if (!isset($matches[71]) || !is_string($matches[71]))
+        # Check for Data (329 is the last row if data has updated successfully)
+        if (!isset($matches[329]) || !isset($matches[71]) || !is_string($matches[71]))
             return false;
         $data['tx']['oi']['long']['volume']['dealers'] = self::numeric($matches[3]);
         $data['tx']['oi']['short']['volume']['dealers'] = self::numeric($matches[4]);
