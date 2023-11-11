@@ -3,10 +3,10 @@
 namespace yidas\twStockCrawler\taifexCrawlers;
 
 /**
- * Crawler - Source of Yahoo 
+ * Crawler - Source of Taifex 
  * 
  * @author  Nick Tsai
- * @since   1.0.0
+ * @since   1.1.0
  */
 class TaifexCrawler extends BaseCrawler
 {
@@ -55,12 +55,18 @@ class TaifexCrawler extends BaseCrawler
         $data['tx']['oi']['long']['volume']['dealers'] = self::numeric($matches[3]);
         $data['tx']['oi']['short']['volume']['dealers'] = self::numeric($matches[4]);
         $data['tx']['oi']['net']['volume']['dealers'] = self::numeric($matches[5]);
+        $data['tx']['oi']['long']['volume']['it'] = self::numeric($matches[9]);
+        $data['tx']['oi']['short']['volume']['it'] = self::numeric($matches[10]);
+        $data['tx']['oi']['net']['volume']['it'] = self::numeric($matches[11]);
         $data['tx']['oi']['long']['volume']['fini'] = self::numeric($matches[15]);
         $data['tx']['oi']['short']['volume']['fini'] = self::numeric($matches[16]);
         $data['tx']['oi']['net']['volume']['fini'] = self::numeric($matches[17]);
         $data['mtx']['oi']['long']['volume']['dealers'] = self::numeric($matches[57]);
         $data['mtx']['oi']['short']['volume']['dealers'] = self::numeric($matches[58]);
         $data['mtx']['oi']['net']['volume']['dealers'] = self::numeric($matches[59]);
+        $data['mtx']['oi']['long']['volume']['it'] = self::numeric($matches[63]);
+        $data['mtx']['oi']['short']['volume']['it'] = self::numeric($matches[64]);
+        $data['mtx']['oi']['net']['volume']['it'] = self::numeric($matches[65]);
         $data['mtx']['oi']['long']['volume']['fini'] = self::numeric($matches[69]);
         $data['mtx']['oi']['short']['volume']['fini'] = self::numeric($matches[70]);
         $data['mtx']['oi']['net']['volume']['fini'] = self::numeric($matches[71]);
@@ -76,12 +82,18 @@ class TaifexCrawler extends BaseCrawler
         $data['tx']['oi']['long']['value']['dealers'] = self::numeric($matches[3]);
         $data['tx']['oi']['short']['value']['dealers'] = self::numeric($matches[4]);
         $data['tx']['oi']['net']['value']['dealers'] = self::numeric($matches[5]);
+        $data['tx']['oi']['long']['value']['it'] = self::numeric($matches[9]);
+        $data['tx']['oi']['short']['value']['it'] = self::numeric($matches[10]);
+        $data['tx']['oi']['net']['value']['it'] = self::numeric($matches[11]);
         $data['tx']['oi']['long']['value']['fini'] = self::numeric($matches[15]);
         $data['tx']['oi']['short']['value']['fini'] = self::numeric($matches[16]);
         $data['tx']['oi']['net']['value']['fini'] = self::numeric($matches[17]);
         $data['mtx']['oi']['long']['value']['dealers'] = self::numeric($matches[57]);
         $data['mtx']['oi']['short']['value']['dealers'] = self::numeric($matches[58]);
         $data['mtx']['oi']['net']['value']['dealers'] = self::numeric($matches[59]);
+        $data['mtx']['oi']['long']['value']['it'] = self::numeric($matches[63]);
+        $data['mtx']['oi']['short']['value']['it'] = self::numeric($matches[64]);
+        $data['mtx']['oi']['net']['value']['it'] = self::numeric($matches[65]);
         $data['mtx']['oi']['long']['value']['fini'] = self::numeric($matches[69]);
         $data['mtx']['oi']['short']['value']['fini'] = self::numeric($matches[70]);
         $data['mtx']['oi']['net']['value']['fini'] = self::numeric($matches[71]);
@@ -142,12 +154,18 @@ class TaifexCrawler extends BaseCrawler
         $data['txo']['call']['oi']['long']['volume']['dealers'] = self::numeric($matches[3]);
         $data['txo']['call']['oi']['short']['volume']['dealers'] = self::numeric($matches[4]);
         $data['txo']['call']['oi']['net']['volume']['dealers'] = self::numeric($matches[5]);
+        $data['txo']['call']['oi']['long']['volume']['it'] = self::numeric($matches[9]);
+        $data['txo']['call']['oi']['short']['volume']['it'] = self::numeric($matches[10]);
+        $data['txo']['call']['oi']['net']['volume']['it'] = self::numeric($matches[11]);
         $data['txo']['call']['oi']['long']['volume']['fini'] = self::numeric($matches[15]);
         $data['txo']['call']['oi']['short']['volume']['fini'] = self::numeric($matches[16]);
         $data['txo']['call']['oi']['net']['volume']['fini'] = self::numeric($matches[17]);
         $data['txo']['put']['oi']['long']['volume']['dealers'] = self::numeric($matches[21]);
         $data['txo']['put']['oi']['short']['volume']['dealers'] = self::numeric($matches[22]);
         $data['txo']['put']['oi']['net']['volume']['dealers'] = self::numeric($matches[23]);
+        $data['txo']['put']['oi']['long']['volume']['it'] = self::numeric($matches[27]);
+        $data['txo']['put']['oi']['short']['volume']['it'] = self::numeric($matches[28]);
+        $data['txo']['put']['oi']['net']['volume']['it'] = self::numeric($matches[29]);
         $data['txo']['put']['oi']['long']['volume']['fini'] = self::numeric($matches[33]);
         $data['txo']['put']['oi']['short']['volume']['fini'] = self::numeric($matches[34]);
         $data['txo']['put']['oi']['net']['volume']['fini'] = self::numeric($matches[35]);
@@ -163,12 +181,18 @@ class TaifexCrawler extends BaseCrawler
         $data['txo']['call']['oi']['long']['value']['dealers'] = self::numeric($matches[2]);
         $data['txo']['call']['oi']['short']['value']['dealers'] = self::numeric($matches[3]);
         $data['txo']['call']['oi']['net']['value']['dealers'] = self::numeric($matches[4]);
+        $data['txo']['call']['oi']['long']['value']['it'] = self::numeric($matches[7]);
+        $data['txo']['call']['oi']['short']['value']['it'] = self::numeric($matches[8]);
+        $data['txo']['call']['oi']['net']['value']['it'] = self::numeric($matches[9]);
         $data['txo']['call']['oi']['long']['value']['fini'] = self::numeric($matches[12]);
         $data['txo']['call']['oi']['short']['value']['fini'] = self::numeric($matches[13]);
         $data['txo']['call']['oi']['net']['value']['fini'] = self::numeric($matches[14]);
         $data['txo']['put']['oi']['long']['value']['dealers'] = self::numeric($matches[17]);
         $data['txo']['put']['oi']['short']['value']['dealers'] = self::numeric($matches[18]);
         $data['txo']['put']['oi']['net']['value']['dealers'] = self::numeric($matches[19]);
+        $data['txo']['put']['oi']['long']['value']['it'] = self::numeric($matches[22]);
+        $data['txo']['put']['oi']['short']['value']['it'] = self::numeric($matches[23]);
+        $data['txo']['put']['oi']['net']['value']['it'] = self::numeric($matches[24]);
         $data['txo']['put']['oi']['long']['value']['fini'] = self::numeric($matches[27]);
         $data['txo']['put']['oi']['short']['value']['fini'] = self::numeric($matches[28]);
         $data['txo']['put']['oi']['net']['value']['fini'] = self::numeric($matches[29]);
