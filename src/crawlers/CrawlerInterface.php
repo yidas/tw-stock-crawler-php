@@ -6,7 +6,7 @@ namespace yidas\twStockCrawler\crawlers;
  * Crawler Interface
  * 
  * @author  Nick Tsai
- * @since   1.1.0
+ * @since   1.2.1
  */
 interface CrawlerInterface 
 {
