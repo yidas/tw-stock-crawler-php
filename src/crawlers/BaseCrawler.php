@@ -164,6 +164,17 @@ Abstract class BaseCrawler implements CrawlerInterface
 
         return $response;
     }
+
+    /**
+     * Numeric
+     *
+     * @param string $string
+     * @return integer
+     */
+    protected static function numeric($string)
+    {
+        return (int) str_replace(',', '', $string);
+    }
 }
 
 

@@ -14,6 +14,56 @@ class TwseCrawler extends BaseCrawler implements CrawlerInterface
     const HOST_TRX = "https://www.twse.com.tw";
 
     /**
+     * Get Daily Trading Summarys
+     *
+     * @param string|integer $stockId
+     * @return array
+     */
+    public static function getDailyTradingSummarys($date=null)
+    {
+        // Date
+        $dateFormat = "Ymd";
+        $date = ($date) ? date($dateFormat, strtotime($date)) : date($dateFormat);
+        
+        // API returning JSON
+        $json = self::request(self::HOST_TRX . "/rwd/en/fund/BFI82U?type=day&dayDate=%s&response=json", [
+            $date,
+            ]);
+        // var_dump($json);var_dump($date);exit;
+        
+        # Check for JSON
+        if (!self::checkResponseBody($json))
+            return false;
+
+        $response = json_decode($json, true);
+        // var_dump($response);exit;
+        
+        if (!isset($response["data"])) {
+            return false;
+        }
+    
+        /**
+         * Parse
+         */
+        $resData = $response["data"];
+
+        $data = [];
+        $data["date"] = $date;
+        $data['trx']['long']['value']['dealers'] = self::numeric($resData[0][1]) + self::numeric($resData[1][1]);
+        $data['trx']['short']['value']['dealers'] = self::numeric($resData[0][2]) + self::numeric($resData[1][2]);
+        $data['trx']['net']['value']['dealers'] = self::numeric($resData[0][3]) + self::numeric($resData[1][3]);
+        $data['trx']['long']['value']['it'] = self::numeric($resData[2][1]);
+        $data['trx']['short']['value']['it'] = self::numeric($resData[2][2]);
+        $data['trx']['net']['value']['it'] = self::numeric($resData[2][3]);
+        $data['trx']['long']['value']['fini'] = self::numeric($resData[3][1]) + self::numeric($resData[4][1]);
+        $data['trx']['short']['value']['fini'] = self::numeric($resData[3][2]) + self::numeric($resData[4][2]);
+        $data['trx']['net']['value']['fini'] = self::numeric($resData[3][3]) + self::numeric($resData[4][3]);
+        $data['trx']['net']['value']['others'] = 0 - self::numeric($resData[5][3]);
+
+        return $data;
+    }
+
+    /**
      * Get Company data
      *
      * @param string|integer $stockId
