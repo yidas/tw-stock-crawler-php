@@ -51,7 +51,7 @@ USAGE
 You could first configure the crawler with source or stockId, and then call the function you need.
 
 ```php
-$parser = \yidas\twStockCrawler\Crawler::config(["source"=>"yahoo"]);
+$parser = \yidas\twStockCrawler\Crawler::config(["source"=>"twse"]);
 $parser::setStockId("2330");
 $priceData2330 = $parser::getLastPrice();
 $priceData2454 = $parser::getLastPrice("2454");
