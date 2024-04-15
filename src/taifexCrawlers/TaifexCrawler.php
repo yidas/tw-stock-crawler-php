@@ -41,12 +41,12 @@ class TaifexCrawler extends BaseCrawler
         $data = [];
 
         /* Get Title */
-        $pattern = '/<span class="right">日期(\S+)<\/span>/';
+        $pattern = '/class="right">日期(\S+)<\/span>/';
         // preg_match($pattern, $html, $matches);var_dump($matches);exit;
         $data['date'] = preg_match($pattern, $html, $match) ? $match[1] : '';
 
         /* Get All lots */
-        $pattern = '/<font color="blue">\s*\n*\s*(\S+)<\/font>/';
+        $pattern = '/<span class="blue">\s*\n*\s*(\S+)<\/span>/';
         // preg_match_all($pattern, $html, $matches);var_dump($matches);exit;
         $matches = preg_match_all($pattern, $html, $match) ? $match[1] : '';
         # Check for Data (329 is the last row if data has updated successfully)
@@ -73,7 +73,7 @@ class TaifexCrawler extends BaseCrawler
         // print_r($data);exit;
 
         /* Get All amount */
-        $pattern = '/<div align="right">\s*\n*\s*(\S+)<\/div>/';
+        $pattern = '/align="right">\s*\n*\s*(\S+)<\/div>/';
         // preg_match_all($pattern, $html, $matches);var_dump($matches);exit;
         $matches = preg_match_all($pattern, $html, $match) ? $match[1] : '';
         # Check for Data
@@ -140,12 +140,12 @@ class TaifexCrawler extends BaseCrawler
         $data = [];
 
         /* Get Title */
-        $pattern = '/<span class="right">日期(\S+)<\/span>/';
+        $pattern = '/class="right">日期(\S+)<\/span>/';
         // preg_match($pattern, $html, $matches);var_dump($matches);exit;
         $data['date'] = preg_match($pattern, $html, $match) ? $match[1] : '';
 
         /* Get All lots */
-        $pattern = '/<font color="blue">\s*\n*\s*(\S+)<\/font>/';
+        $pattern = '/class="blue">\s*\n*\s*(\S+)<\/span>/';
         // preg_match_all($pattern, $html, $matches);var_dump($matches);exit;
         $matches = preg_match_all($pattern, $html, $match) ? $match[1] : '';
         # Check for Data
@@ -172,7 +172,7 @@ class TaifexCrawler extends BaseCrawler
         // print_r($data);exit;
 
         /* Get All amount (The column format of the first amount is different) */
-        $pattern = '/\'#FFFFF0\'>\s*\n*\s*(\S+)<\/TD>/';
+        $pattern = "/bgcolor='#FFFFF0'>\s*\n*\s*(\S+)<\/TD>/";
         // preg_match_all($pattern, $html, $matches);var_dump($matches);exit;
         $matches = preg_match_all($pattern, $html, $match) ? $match[1] : '';
         # Check for Data
